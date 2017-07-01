@@ -76,7 +76,7 @@ locBosquePocoDenso.pic = "res/forest_open.jpg";
 var locCaminoDeLaMina = ctrl.places.creaLoc(
 	"Camino de la mina",
 	[ "camino de la mina" ],
-	"Múltiples ${herramientas y restos abandonados, ex herramientas} \
+	"Múltiples ${herramientas y restos de todo tipo, ex herramientas} \
 	 se encuentran abandonados, esparcidos al borde del camino \
 	 que de forma bastante llana discurre de ${este, este} a ${oeste, oeste}."
 );
@@ -390,6 +390,9 @@ locPasaje.preGo = function() {
             toret = "Atando la cuerda, habéis podido bajar al hueco inferior. \
                      ${Don Diego, habla con Diego} \
                      mira a su alrededor, maravillado.";
+        } else {
+            toret = "No ves forma de descender. De hecho, parece que solo \
+                     podríais descolgaros hasta abajo.";
         }
     } else {
         goAction.exe( parser.sentence );
@@ -1207,7 +1210,8 @@ var objZanjas = ctrl.creaObj(
 var objZarzas = ctrl.creaObj(
 	"zarzas",
 	[ "zarzas" ],
-	"Las zarzas impiden el acceso al río, que de hecho no parece demasiado profundo.",
+	"Las zarzas impiden el acceso al río, \
+	 que de hecho no parece demasiado profundo.",
 	locPuente,
 	Ent.Scenery
 );
@@ -1221,7 +1225,7 @@ var npcSuperviviente = ctrl.personas.creaPersona(
 );
 npcSuperviviente.status = 0;
 
-function amenities() {
+function amusing() {
     return "Este relato fue creado para la <i>JAMCanciones</i> en 2017.<br/> \
             El objetivo era crear ficción interactiva basada en relatos de \
             frontera, inspirándose en ciertas canciones, como por ejemplo, \
@@ -1237,7 +1241,7 @@ var htmlRestartEnding = "<p align='right'>\
                          style.display='block'; return false\">\
                          Ver curiosidades</a>.</i></p>\
                          <p id='pAmenity' align='right' style='display: none'>"
-                         + amenities()
+                         + amusing()
                          + "</p>";
 
 npcSuperviviente.final = function() {
@@ -1245,15 +1249,34 @@ npcSuperviviente.final = function() {
     
     ctrl.print( "Ambos admiraron con detenimiento los los grabados \
                  e inscripciones." );
-    this.say( "Esto esclarece el misterio, Don Juan." );
+    this.say( "Esto ${esclarece el misterio, ex ending}, Don Juan." );
     player.say( "Así es, Don Diego." );
-    
+};
+
+var ending = ctrl.creaObj(
+    "ending",
+    [],
+    "",
+    locSantuario,
+    Ent.Scenery
+);
+
+ending.preExamine = function() {
     var dvCmds = ctrl.getHtmlPart( "dvCmds" );
     dvCmds.style.display = "none";
-    ctrl.endGame( "Los nómadas defendían su santuario, su lugar de culto."
-                       + htmlRestartEnding,
-                    "res/santuary.jpg" );
-}
+    ctrl.endGame( "<p>\
+                   Los nómadas defendían su santuario, su lugar de culto. \
+                   Parece claro que el que abrieran la mina y encontraran \
+                   su templo fue demasiado para ellos. Pero... ¿por qué \
+                   los ataques a otros asentamientos?¿Cuál sería ahí la \
+                   razón? Quizás la exploración de este lugar, \
+                   y la traducción de las inscripciones permita obtener \
+                   una respuesta.\
+                   </p>"
+                  + htmlRestartEnding,
+                  "res/santuary.jpg" );
+    return "";
+};
 
 npcSuperviviente.preTalk = function() {
     var toret = "Sombrío, no parece interesado en hablar más.";
@@ -1333,27 +1356,36 @@ npcSuperviviente.preTalk = function() {
         this.say( "Sí." );
         player.say( "No es un monstruo. No son monstruos." );
         this.say( "Pero ellos..." );
-        ctrl.print( "Meneas la cabeza hacia los lados, descartando la protesta de \
-                     D. Diego." );
-        player.say( "Les conozco. Han atacado otras colonias. No sabemos por qué. \
+        ctrl.print( "Meneas la cabeza hacia los lados, \
+                     descartando la protesta de D. Diego." );
+        player.say( "Les conozco. Han atacado otras colonias. \
+                     No sabemos por qué. \
                      Siempre llevan estas pieles cubriéndoles el cuerpo, \
                      para intimidar, supongo, a sus enemigos." );
-        ctrl.print( "D. Diego sigue sin acercarse, un temor cerval le invade." );
+        ctrl.print( "Retiras la piel de oso que recubre el cuerpo \
+                     del nómada. Aunque se puede ver que sin dudas \
+                     se trata de un hombre, D. Diego sigue sin acercarse, \
+                     un temor cerval le invade." );
         player.say( "¿Qué le pasó a este?" );
-        this.say( "Fue el único que se aventuró por estos lares, después de que \
-                   abandonásemos la colonia, inutilizáramos el puente, \
+        this.say( "Fue el único que se aventuró por estos lares, \
+                   después de que abandonásemos la colonia, \
+                   inutilizáramos el puente, \
                    y nos asentáramos aquí. Por algún motivo, \
-                   vino solo, le vimos llegar y le matamos. Le dejamos ahí, no nos \
-                   atrevimos a más." );
+                   vino solo, le vimos llegar y le matamos. \
+                   Le dejamos ahí, no nos atrevimos a más." );
         player.say( "¿Quiénes?" );
-        this.say( "Mis compañeros, amigos, vecinos... todos muertos o huídos en las \
+        this.say( "Mis compañeros, amigos, vecinos... \
+                   todos muertos o huídos en \
                    embarcaciones a un lugar más favorable." );
-        this.say( "¿Cómo es que a Corte nos envió aquí, conociendo el peligro?" );
+        this.say( "¿Cómo es que a Corte nos envió aquí, \
+                   conociendo el peligro?" );
         ctrl.print( "Haces un amplio gesto semicircular con la mano." );
-        player.say( "Solo han atacado media docena de asentamientos. Sabemos muy poco \
-                     de ellos. ¿Dónde van a atacar?¿Por qué lo hacen? Ni siquiera son \
-                     habitantes de las tierras de las colonias, siempre aparecen \
-                     después... No sabemos gran cosa. Les llamamos los nómadas." );
+        player.say( "Solo han atacado media docena de asentamientos. \
+                     Sabemos muy poco de ellos. \
+                     ¿Dónde van a atacar?¿Por qué lo hacen? \
+                     Ni siquiera son habitantes autóctonos de las tierras \
+                     de las colonias, siempre aparecen después... \
+                     No sabemos gran cosa. Les llamamos los nómadas." );
         
         npcNomada.id = "nómada";
         ++npcNomada.status;
@@ -1447,8 +1479,9 @@ npcNomada.preTalk = function() {
     if ( this.status == 0 ) {
         toret = "";
         ctrl.print( "Está muerto, y desde hace tiempo. Lo volteas (para horror \
-            de tu acompañante), y compruebas que no es más que un hombre envuelto en \
-            piel de oso. Está concienzudamente disfrazado, eso sí." );
+            de tu acompañante), y compruebas que no es más que un hombre \
+            envuelto en piel de oso. \
+            Está concienzudamente disfrazado, eso sí." );
     }
     else
     if ( this.status == 1 ) {
@@ -1513,8 +1546,4 @@ var objOrdenes = ctrl.creaObj(
 
 
 ctrl.personas.changePlayer( pc );
-//ctrl.places.ponInicio( locMuelle );
-ctrl.places.ponInicio( locLlanura );
-objCuerda.moveTo( pc );
-npcSuperviviente.status = 3;
-
+ctrl.places.ponInicio( locMuelle );
