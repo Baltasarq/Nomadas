@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <!-- uuid:EF8DF70C-874C-4C66-8246-18CA0887E49B -->
+        <meta charset="utf-8"/>
+        <script type="text/javascript" src="http://baltasarq.github.io/fi-js/lib/fi.js"></script>
+        <script type="text/javascript" src="http://baltasarq.github.io/fi-js/lib/verbs.js"></script>
+        <script type="text/javascript" src="nomadas.js"></script>
+        <title>Nómadas</title>
+        <link href="nomadas.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="dvTop">
+                <table width="100%"><tr>
+                        <td align="left"><div id="dvTitle"></div></td>
+                        <td align="right"><div id="dvId"></div></td>
+                </tr></table>
+        </div>
+        <div id="dvIntro">
+                <form id="frmIntro" action="submit">
+                        <input type="image" id="btBoot" class="btn"
+                               alt="enter" width="32" height="32"
+                               src="res/enter.png"
+                               onClick="return ctrl.boot();">
+                </form>
+        </div>
+        <div id="dvFi">
+                <div id="dvPic"></div>
+                <div id="dvDesc">
+                </div>
+                <p>
+                <div id="dvCmds">
+                <table border="0pt" width="100%">
+                    <tr>
+                    <td style="width: 33%; text-align: center">
+                    <a href="#" onClick="javascript: ctrl.inject('i', true, true)">
+                    <img src="res/inv.png" alt="Inventario" title="Inventario"
+                         style="max-width: 32px"/>
+                    </a>
+                    </td>
+                    <td style="width: 33%; text-align: center">
+                    <a href="#" onClick="javascript: ctrl.inject('m', true, true)">
+                    <img src="res/look.png" alt="Mirar alrededor"
+                         title="Mirar alrededor"
+                         style="max-width: 32px"/>
+                    </a>
+                    </td>
+                    <td style="width: 33%; text-align: center">
+                    <a href="#" onClick="javascript: ctrl.inject('ex brujula', true, true)">
+                    <img src="res/compass.png" alt="Brújula" title="Brújula"
+                         style="max-width: 32px"/>
+                    </a>
+                    </td>
+                </table>
+                </div>
+                <p>
+                <div id="dvAnswer">
+                </div>
+                <p>
+                <div id="dvInput">
+                    <table width="100%"><tr>
+                    <form id="frmInput" action="submit" onsubmit="return parser.doParse();">
+                        <td align="left">
+                        &gt; <input type="text" class="txt" size="40"
+                                maxLength="80" id="edInput">
+                        </td>
+                        <td>
+                            <input  id="btSend" type="button"
+                                    onClick="return parser.doParse();"/>
+                            <input id="btReset" type="button"/>
+                        </td>
+                    </form>
+                    </tr></table>
+                </div>
+                <div id="dvError">
+                </div>
+                <p></p>
+                <table id="tbl-objects-actions" width="100%">
+                <tr>
+                <td>
+                <div id="dvActions">
+                    <table id="subtbl-actions" align="center"></table>
+                </div>
+                </td>
+                <td>
+                <div id="dvObjects">
+                </div>
+                </td></tr></table>
+        </div>
+    </body>
+</html>

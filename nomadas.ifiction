@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifindex version="1.0" xmlns="http://babel.ifarchive.org/protocol/iFiction/">
+    <story>
+        <identification>
+            <ifid>EF8DF70C-874C-4C66-8246-18CA0887E49B</ifid>
+            <format>html</format>
+        </identification>
+        <bibliographic>
+            <title>Nómadas</title>
+            <author>Baltasar</author>
+            <language>ES</language>
+            <headline>Forastero que buscas, la dimensión insondable, la encontrarás, fuera de la ciudad, al final de tu camino.</headline>
+            <genre>historical</genre>
+            <forgiveness>merciful</forgiveness>
+            <description>Juan Vélez llega a la colonia de Epicuren, por encargo del Virrey de Nueva España. Un emisario había llegado hacía pocas semanas a la Corte pidiendo ayuda para el asentamiento. Desgraciadamente, su viaje había sido terrible y parecía no estar en sus cabales: hablaba de monstruos terribles.</description>
+        </bibliographic>
+        <contacts>
+            <authoremail>baltasarq@gmail.com</authoremail>
+            <url>http://caad.es/baltasarq/</url>
+        </contacts>
+        <release>
+            <version>1</version>
+            <releasedate>2017/06/30</releasedate>
+        </release>
+        <colophon>
+            <generator>Babble</generator>
+            <originated>2017/06/30</originated>
+        </colophon>
+    </story>
+</ifindex>

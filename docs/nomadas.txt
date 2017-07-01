@@ -1,0 +1,392 @@
+Muelle
+Las olas lamen las gruesas ${piedras, ex piedras} de la orilla, suaves cantos rodados pulidos por los contínuos embates de la mar. El ${dañado muelle, ex muelle} apenas se mantiene ya sobre el agua, acusando un grave descuido. ${Un camino, norte} discurre ascendente desde el muelle. Observas cómo tus huellas se graban sobre el polvo, siendo las únicas en el suelo.
+[Llegada de Juan Vélez a la colonia de Epicuren, para investigar un peligro advertido.]
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/dock.jpg"
+
+> ex piedras
+Pesados cantos rodados, suaves en sus formas.
+
+> ex muelle
+El muelle se encuentra en un penoso estado, fruto del abandono de años. ¿Cuánto tiempo habrá pasado desde el aviso hasta tu llegada?
+
+> i
+brujula,
+ordenes
+
+> ex brujula
+Indica la dirección. Es equipamiento básico para cualquier explorador.
+
+> ex ordenes
+Tus órdenes, en papel: "Estimado Don Vélez: Diríjase con la mayor premura a la colonia de Epicuren, de donde ha venido con grandes penurias un emisario adviritiendo del gran peligro que corren sus gentes, peligro que dado el tiempo pasado esperamos y deseamos haya sido conjurado. Atentamente: Pedro de la Cerda."
+
+> n
+Camino del muelle
+El camino asciende suavemente la ladera de una ${colina, norte} cuya ${vegetación, ex 
+vegetacion} se dispone alrededor del sendero, desde el ${embarcadero, sur}. ${Una senda, ex senda} desciende hacia el ${oeste, oeste}, supones que hacia un río, pues el suave murmullo puede oírse desde aquí.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_from_docks.jpg"
+
+> ex vegetacion
+Bastante densa, aunque agradable a la vista.
+
+>o a Camino del molino
+> n
+
+Residencial de Epicuren
+La colonia de Epicuren solo es un ${asentamiento, ex asentamiento} incipiente, desde aquí, la zona residencial del pueblo, puedes ver ${algunas casas, ex casas}, y la ${iglesia yendo hacia el este, este}. ${Bajando hacia el embarcadero, sur}, se alcanza la base de esta planicie, que por totra parte rompen las ${colinas, ex colinas},  ${subiendo hacia el norte, n}.
+[Por fin, has llegado. Ignoras cuánto tiempo ha pasado desde que decidieron enviar a alguien a por socorro, pero aquí estás.]
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/residential.jpg"
+
+> ex casas
+Puedes ver varias casas, deterioradas por el abandono de algunos años. No están en peligro de derrumbe, pero se nota que hace tiempo que no se habitan.
+
+> ex asentamiento
+Se trata de una colonia en una fase inicial de asentamiento. Esta es la zona residencial, mientras el centro del pueblo se sitúa ${hacia el este, este}.
+
+> ex colinas
+${Hacia el norte, norte} puedes ver las colinas que delimitan el asentamiento por ese lado.
+
+> n a Colinas
+> e
+
+Epicuren
+La plaza del pueblo de Epicuren, desde donde puedes ver ${la iglesia, ex iglesia}. Un camino sale hacia ${un bosque, ex bosque}, viajando al ${norte, norte}, otro continúa hacia la ${zona residencial, oeste}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/town.jpg"
+
+>ex iglesia
+La iglesia parece no estar rematada; si bien la estructura está completa, está claro que algo muy importante interrumpió la ornamentación exterior. Podrías ${entrar, entra en iglesia} en ella; al contrario que el resto de ${construcciones, ex construcciones}, todavía no ha sido invadido por la maleza.
+
+> ex construcciones
+Diferentes edificios, la mayoría sin terminar y abandonados.
+
+> ex bosque
+El bosque se sitúa hacia el ${noreste, n}, aunque no en pendiente.
+
+> entra a Iglesia
+> n
+
+Camino hacia el bosque
+En las lindes de un bosque. El camino se interna en la ${arboleda, ex arboleda} caminando hacia el ${este, este}, desde la plaza principal del ${pueblo, ex pueblo}, avanzando hacia el ${sur, sur}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_forest_border.jpg"
+
+> ex arboleda
+La arboleda, de ejemplares con bastante separación entre ellos, comienza aquí.
+
+> ex pueblo
+El pueblo se sitúa en lontananza, hacia el ${sur, sur}.
+
+> e
+
+Bosque poco denso
+El camino atraviesa un ${bosque poco denso, ex sotobosque}, de ${oeste, oeste} a ${este, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/forest_open.jpg"
+
+> ex sotobosque
+El bosque es amplio, permitiendo pasar la luz del sol. El suelo está también bastante limpio de matojos.
+
+> e
+
+Cruce de caminos
+${La senda, ex senda} se divide aquí en dos, hacia el ${sur, sur} y ${desde el interior de un bosque poco denso, oeste}, ${continúa hacia la salida del bosque, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_divides.jpg"
+
+> ex senda
+Marcada como nunca durante el camino, queda claro que pasaban carromatos con frecuencia por esta parte.
+
+> s a Escuela
+> e
+
+Camino de los cultivos
+Una pista permite, el acceso a varios ${campos de cultivo, ex campos}. Desde aquí se ${puede llegar al bosque, oeste}, al oeste, ${desde una granja, este}, en lontananza, en sentido contrario.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_farm.jpg"
+
+> ex campos
+Los campos mantienen cosechas que ya se han perdido, y nadie recogerá. Las malas hierbas empiezan a destruir el cuidado ${trabajo, ex trabajos} de años, ordenando los cultivos.
+
+> ex trabajos
+${Vallas, ex vallas}, ${zanjas, ex zanjas}, ${riegos, ex riegos}... el trabajo realizado es incomensurable.
+
+> ex zanjas
+Las zanjas han empezado a suavizar sus ${bordes, ex bordes}: en muy poco tiempo, será imposible distinguirlas del resto del terreno.
+
+> ex bordes
+Los bordes de las zanjas empiezan a perderse, pareciendo todo el terreno llano.
+
+> ex riegos
+Canalizaban el agua que se vertía abundantemente para asegurar la correcta hidratación de cada ${sector, ex sectores} de los cultivos.
+
+> ex sectores
+Las plantaciones se dividían en sectores, cultivando distintos tipos de semillas y tubérculos.
+
+> ex vallas
+Las vallas están ahí para que el ganado no interfiera con las cosechas. Están basadas en gruesas ${estacas, ex estacas} que dividen también ${sectores, ex sectores}.
+
+> ex estacas
+Las estacas mantienen las divisiones entre sectores de cultivo, distintas semillas... Vaya, una de ellas ${parece suelta, coge estaca}.
+
+> ex estaca
+Es una estaca fuerte, acabada en punta.
+
+> coge estaca
+Cogida.
+
+> e
+
+Granja
+Una ${granja, ex granero} en evidente estado de abandono, se sitúa en el centro de varios campos de cultivo.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/barn.jpg"
+
+> ex granero
+Se trata de un gran granero en el que guardar y tratar cosechas. No hay nada en su interior más que algo de ${paja, ex paja}.
+
+> ex paja
+Paja y más paja.
+
+.end
+
+Escuela
+El edificio sin terminar para ${una escuela, ex escuela}. De nuevo, aunque el estado es de marcado abandono, y que está sin rematar, no está muy deteriorado. El camino que ${proviene del norte, n}, termina aquí.
+[No recuerdas que hubiera una escuela cuando te marchaste. La ayuda debió presentarse tres o cuatro años después.]
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/school.jpg"
+
+> ex escuela
+Al final del camino se asienta una pequeña escuela. El edificio, terminado pero sin rematar, y abandonado, se alza como un fantasma entre los árboles. Está completamente vacío.
+
+> n a Cruce de caminos
+
+.end
+
+Iglesia
+El interior de la iglesia, sombrío y húmedo, te resulta desagradable. Puedes ver un ${altar, ex altar} a medio construir... el resto del edificio está vacío.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/church.jpg"
+
+> ex altar
+El altar no tiene nada especial... curioseas y soplas para levantar una densa nuble de polvo, dejando al descubierto una ${nota, ex nota} que no habías apreciado antes.
+
+> ex nota
+El texto es escueto: "Huimos al norte, más allá de las colinas."
+
+> coge nota
+Cogida.
+
+> sal a Epicuren
+.end
+
+Camino del molino
+Una suave pendiente desde el ${este, este} lleva hasta el río, donde puedes ver que se asienta un ${molino, oeste}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_mill_river.jpg"
+
+> e a Camino del muelle
+> o
+
+Molino
+Un ${gran molino, ex molino} se yergue sobre ${el río, ex rapidos}. Aunque abandonado, se percibe aún la fuerza que gestionaba diariamente cuando estaba en uso.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/mill.jpg"
+
+> ex molino
+La entrada del molino está taponada con zarzas, aunque por lo que puedes ver por las ventanas, no hay nada interesante en su interior.
+
+> ex rapidos
+El río discurre de norte a sur, en una zona de rápidos que le dan gran fuerza a las aguas.
+
+.end
+
+Colinas
+Las colinas ${escalan por sobre la zona residencial de Epicuren, sur}, ${hacia el sur de las montañas, norte}. Desde aquí tienes una magnífica ${vista de la colonia, ex vista}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/hills_north.jpg"
+
+> s a Residencial de Epicuren
+> n
+
+Llanura
+Una sorprendente llanura se extiende aparentemente en todas direcciones, con las ${montañas, ex montanas} delimitándola al noreste y ${densos bosques, ex bosques} al noroeste. Las ${colinas, ex lomas} se sitúan al ${sur, sur} en un claro declive del terreno,  a pesar de todo. Dos sendas parten en sentidos contrarios de la dirección ${este, este} a ${oeste, oeste}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/plain.jpg"
+
+> ex montanas
+Las montanas son pedregosas, en contraste con esta llanura, aunque no muy altas.
+
+> ex lomas
+Situadas al ${sur, sur}, son otro de los límites naturales de esta planicie.
+
+> ex bosques
+Rodea la meseta por el noroeste.
+
+> e a Camino de la sierra
+> o
+
+Borde del bosque
+Un ${bosque frondoso, ex selva} comienza al ${norte, n} de este lugar. El camino se interna en él desde el ${este, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/forest_dense.jpg"
+
+> ex selva
+Un bosque frondoso y húmedo.
+
+> n a Puente
+.end
+
+
+Camino de la sierra
+El camino asciende abruptamente, escalando por entre ${rocas, ex rocas} que parecen querer proteger ciertos pasos del viento.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_mountains.jpg"
+
+> ex rocas
+Muchas de ellas son altas, de caprichosas formas.
+
+> o a Llanura
+> e a Camino del lago
+> n a Circo
+.end
+
+Puente
+${Un puente, ex puente} sobre ${el río, ex rio}, casi comido por la ${vegetación, ex zarzas}, permite continuar avanzando hacia el norte, mientras un ${sendero, ex sendero} parte al pie del puente y se dirige a los límites del bosque.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/bridge.jpg"
+
+> ex sendero
+Te sorprende que exista un sendero, y un puente, en este lugar. Está claro que se trata de una zona habitada... ¿aunque, quizás también abandonada?
+
+> ex puente
+El puente está decrépito y abandonado. Fijándote en ${los anclajes, ex anclajes}, te das cuenta de que el deterioro del puente no es natural, sino deliberado. Alguien no está interesado en que sea cruzado.
+
+> ex anclajes
+Los anclajes están sueltos, con sus amarres desperdigados por el suelo.
+
+> ex rio
+Discurre de norte a suroeste.
+
+> ex zarzas
+Las zarzas impiden el acceso al río, que de hecho no parece demasiado profundo.
+
+> s a Borde del bosque
+> n
+
+Interior del bosque
+El ${camino, ex pista} se bifurca aquí para permitir caminar hacia el ${este, este}, o en sentido contrario, ${bajando hacia un pequeño valle, oeste}. El bosque empieza a mostrar mucha ${vegetación, ex arbustos} aquí, hasta el punto de que por momentos es complicado avanzar.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_inside_forest.jpg"
+
+> ex pista
+El camino está realmente muy transitado en este lugar.
+
+> ex arbustos
+La vegetación se cierra aquí sobre el ${camino, ex camino}.
+
+> e a Colina boscosa
+> o
+
+Valle frondoso
+Una vegetación casi selvática forma el fondo de este valle. La espesura no te permite apreciar ningún otro camino aparte del que sube hacia la ${salida del valle, e}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/forest_selvatic.jpg"
+
+> o a Claro del bosque
+
+.end
+
+Camino del lago
+Desde este lugar, puede apreciarse una pequeña ${vereda, ex vereda} que ${desciende hacia un lago, sur}, mientras el camino principal ${continúa hacia las montañas, oeste}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_mountain_lake.jpg"
+
+> ex vereda
+Serpentea por entre colinas y pasos rocosos, conformándose como una pequeña tira sin vegetación.
+
+> o a Camino de la sierra
+> s
+
+Lago
+El camino se torna menos pedregoso a medida que se aleja de la orilla ${hacia las montañas, norte}. Puedes ver una ${casa, ex casa} en un pequeño promontorio sobre la ${superficie del agua, ex lago}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/houses_lake.jpg"
+
+> ex casa
+Una curiosa casa a la orilla del ${lago, ex lago}. La entrada está condenada con gruesos tablones. En la orilla pedregosa,  puedes ver un ${bote, ex bote}.
+
+> ex lago
+Puedes apreciar un intenso color verde en el agua. En la orilla frente a la casa,  puedes ver un ${bote, ex bote}.
+
+> ex bote
+Un bote en perfecto estado, aunque a la vez mostrando signos evidentes de no haber sido usado en mucho tiempo.
+
+.end
+
+Claro del bosque
+Un ${hermoso claro, ex apertura} del bosque en el fondo del ${valle, ex valle}, escondido por la densa vegetación. Siguiendo la suave pendiente, puedes salir del claro ${hacia el centro del valle, e}.
+[Aquí se encuentra el cadáver del nómada.]
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/clear_forest.jpg"
+
+> ex apertura
+El claro es como un respiro en medio de tanta vegetación.
+
+> ex valle
+Es angosto y denso.
+
+> e a Valle frondoso
+
+.end
+
+Colina boscosa
+El bosque asciende por una suave colina, desde su ${interior, oeste}, hasta la ${cumbre de la colina misma, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/hill_forest.jpg"
+
+> o a Interior del bosque
+> e
+
+Asentamiento
+Al salir del ${bosque sobre la colina, oeste}, te encuentras con un pequeño ${asientamento, ex poblado} en la ladera de la cumbre de la colina. Varias ${cabañas. ex cabanas} se agarran a la pendiente, de una forma un tanto desordenada.
+[Se encuentra en este punto un superviviente, que va a relatar parte de lo ocurrido.]
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/settlement.jpg"
+
+> ex poblado
+Son varias ${cabañas, ex cabanas} que están habitadas, o al menos lo estuvieron hasta hace muy poco. Si bien parecen sólidas, su diseño no parece tan meditado como las de la colonia, mostrando distintos grados de acabado.
+
+> ex cabanas
+Se trata de sólidas construcciones de toscos troncos, no tablones.
+
+.end
+
+Circo
+El camino ha ascendido aquí hasta ${una depresión rodeada de picos, ex circo} de distintas alturas. Se puede descender por dos lados, hacia un ${lago al sur, sur}, y hacia un ${cañón herboso al este, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/depression.jpg"
+
+> ex circo
+Las montañas rodean un hoyo natural, que seguramente se llena de agua en invierno, pero que ahora se encuentra en pleno estío.
+
+> s a Camino de la sierra
+> e
+
+Valle en cortado
+Un cañón recubierto de distinta vida vegetal se abre hacia el ${este, este}.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/canyon.jpg"
+
+> e
+
+Camino de la mina
+Te encuentras en lo que aparenta ser el camino hacia una mina. Puedes deducirlo por las ${herramientas y restos abandonados, ex herramientas} al borde del camino.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/path_mine.jpg"
+
+> ex herramientas
+Picos, palas, carretas y demás material.
+
+> e
+
+Entrada de la mina
+Una ${boca oscura, ex mina} guarda la entrada a una mina excavada en la roca.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/mine_entrance.jpg"
+
+> ex mina
+No parece invitar a entrar con la negrura que exhibe.
+
+> e
+
+Pasaje
+El túnel continúa desde la entrada hacia el interior, pero lo más destacable es un ${agujero en el suelo, ex agujero} ligeramente apartado hacia un lateral.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/tunnel.jpg"
+
+> ex agujero
+El agujero permite ver la estancia inferior, pero desde este lugar no es sencillo adivinar de qué se trata, al margen de estar excavada en la roca. Podrías ${descender, abajo} por el hueco.
+
+> abajo
+
+Santuario
+De sección circular, esta cueva agrandada y profundizada en la roca está repleta de ${inscripciones, ex inscripciones}, que hacen suponer su función de lugar de culto.
+.grf "/home/baltasarq/Dropbox/Prys/if/prys/nomadas/res/santuary.jpg"
+
+> ex inscripciones
+No puedes descrifrarlas, no se parecen a nada que conozcas.
+
+.end
