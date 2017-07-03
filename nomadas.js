@@ -151,6 +151,14 @@ var locCaminoDelMuelle = ctrl.places.creaLoc(
 );
 locCaminoDelMuelle.pic = "res/path_from_docks.jpg";
 
+var objSendaCaminoDelMuelle = ctrl.creaObj(
+    "senda",
+    [ "sendero" ],
+    "Desciende hacia el murmullo de un río, al ${oeste, oeste}.",
+    locCaminoDelMuelle,
+    Ent.Scenery
+);
+
 var locCaminoHaciaElBosque = ctrl.places.creaLoc(
 	"Camino hacia el bosque",
 	[ "camino hacia el bosque" ],
@@ -1138,7 +1146,8 @@ var objSelva = ctrl.creaObj(
 var objSenda = ctrl.creaObj(
 	"senda",
 	[ "senda" ],
-	"Marcada como nunca durante el camino, queda claro que pasaban carromatos con frecuencia por esta parte.",
+	"Marcada como nunca durante el camino, \
+	queda claro que pasaban carromatos con frecuencia por esta parte.",
 	locCruceDeCaminos,
 	Ent.Scenery
 );
@@ -1146,7 +1155,9 @@ var objSenda = ctrl.creaObj(
 var objSendero = ctrl.creaObj(
 	"sendero",
 	[ "sendero" ],
-	"Te sorprende que exista un sendero, y un puente, en este lugar. Está claro que se trata de una zona habitada... ¿aunque, quizás también abandonada?",
+	"Te sorprende que exista un sendero, y un puente, en este lugar. \
+	Está claro que se trata de una zona habitada... \
+	¿aunque, quizás también abandonada?",
 	locPuente,
 	Ent.Scenery
 );
@@ -1154,7 +1165,8 @@ var objSendero = ctrl.creaObj(
 var objSotobosque = ctrl.creaObj(
 	"sotobosque",
 	[ "sotobosque" ],
-	"El bosque es amplio, permitiendo pasar la luz del sol. El suelo está también bastante limpio de matojos.",
+	"El bosque es amplio, permitiendo pasar la luz del sol. \
+	El suelo está también bastante limpio de matojos.",
 	locBosquePocoDenso,
 	Ent.Scenery
 );
