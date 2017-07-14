@@ -1,7 +1,7 @@
 // nomadas.js
 /*  Juan Vélez llega a la colonia de Epicuren tras recibir la Corte del
- *  virreinato una petición de auxilio de sus habitantes. 
- * 
+ *  virreinato una petición de auxilio de sus habitantes.
+ *
  *  generado por FI.JS@txtMap, v0.1/ v0.6 20140612
  *  Tue Jun 27 16:07:25 2017
  */
@@ -40,9 +40,9 @@ ctrl.setVersion( "1.0 20170630" );
 var locAsentamiento = ctrl.places.creaLoc(
 	"Asentamiento",
 	[ "asentamiento" ],
-	"A la ${salida hacia el bosque sobre la colina, oeste}, te encuentras \
-	con un pequeño ${asentamiento, ex poblado} en la ladera \
-	de la cumbre de la colina. Varias ${cabañas, ex cabanas} se agarran \
+	"La salida del bosque al ${oeste, oeste} se enfrenta a \
+	un pequeño ${asentamiento, ex poblado} sobre la ladera \
+	en la cumbre de la colina. Varias ${cabañas, ex cabanas} se agarran \
 	a la pendiente, de una forma un tanto desordenada."
 );
 locAsentamiento.pic = "res/settlement.jpg";
@@ -62,14 +62,17 @@ locAsentamiento.preExamine = function() {
 var locBordeDelBosque = ctrl.places.creaLoc(
 	"Borde del bosque",
 	[ "borde del bosque" ],
-	"Un ${bosque frondoso, ex selva} comienza al ${norte, n} de este lugar. El camino se interna en él desde el ${este, este}."
+	"Un ${bosque frondoso, ex selva} comienza al ${norte, n} de este lugar. \
+	El camino se interna en él en un brusco giro que proviene \
+	desde el ${este, este}."
 );
 locBordeDelBosque.pic = "res/forest_dense.jpg";
 
 var locBosquePocoDenso = ctrl.places.creaLoc(
 	"Bosque poco denso",
 	[ "bosque poco denso" ],
-	"El camino atraviesa un ${bosque poco denso, ex sotobosque}, de ${oeste, oeste} a ${este, este}."
+	"El camino atraviesa un ${bosque poco denso, ex sotobosque}, \
+	en la dirección ${este, este} a ${oeste, oeste}."
 );
 locBosquePocoDenso.pic = "res/forest_open.jpg";
 
@@ -85,10 +88,10 @@ locCaminoDeLaMina.pic = "res/path_mine.jpg";
 var locCaminoDeLaSierra = ctrl.places.creaLoc(
 	"Camino de la sierra",
 	[ "camino de la sierra" ],
-	"Una senda ${parte abruptamente hacia las montañas, norte}, \
+	"Una senda parte abruptamente hacia las ${montañas al norte, norte}, \
 	escalando por entre ${rocas, ex rocas} \
 	que parecen querer proteger ciertos pasos del viento. \
-	El camino principal sigue la falda de la ${sierra, ex sierra} \
+	El camino principal sigue la falda de la ${sierra, ex sierra}, \
 	de ${este, este} a ${oeste, oeste}."
 );
 locCaminoDeLaSierra.pic = "res/path_mountains.jpg";
@@ -103,7 +106,7 @@ objSierra = ctrl.creaObj(
 
 locCaminoDeLaSierra.preGo = function() {
     var toret = "";
-    
+
     if ( parser.sentence.term1 == "norte" ) {
         if ( npcSuperviviente.owner == locCaminoDeLaSierra ) {
             goAction.exe( parser.sentence );
@@ -119,35 +122,45 @@ locCaminoDeLaSierra.preGo = function() {
     } else {
         goAction.exe( parser.sentence );
     }
-    
+
     return toret;
 };
 
 var locCaminoDeLosCultivos = ctrl.places.creaLoc(
 	"Camino de los cultivos",
 	[ "camino de los cultivos" ],
-	"Una pista permite, el acceso a varios ${campos de cultivo, ex campos}. Desde aquí se ${puede llegar al bosque, oeste}, al oeste, ${desde una granja, este}, en lontananza, en sentido contrario."
+	"Una pista permite el acceso a varios ${campos de cultivo, ex campos}. \
+	Desde aquí se ${puede llegar al bosque al oeste, oeste}, \
+	en sentido opuesto a una ${granja al este, este}, en lontananza."
 );
 locCaminoDeLosCultivos.pic = "res/path_farm.jpg";
 
 var locCaminoDelLago = ctrl.places.creaLoc(
 	"Camino del lago",
 	[ "camino del lago" ],
-	"Desde este lugar, puede apreciarse una pequeña ${vereda, ex vereda} que ${desciende hacia un lago, sur}, mientras el camino principal ${continúa hacia las montañas, oeste}."
+	"Desde este lugar, puede apreciarse una pequeña ${vereda, ex vereda} \
+	que desciende hacia un ${lago al sur, sur}, mientras el camino principal \
+	continúa hacia las ${montañas al oeste, oeste}."
 );
 locCaminoDelLago.pic = "res/path_mountain_lake.jpg";
 
 var locCaminoDelMolino = ctrl.places.creaLoc(
 	"Camino del molino",
 	[ "camino del molino" ],
-	"Una suave pendiente desde el ${este, este} lleva hasta el río, donde puedes ver que se asienta un ${molino, oeste}."
+	"Una suave pendiente desciende desde el ${este, este} \
+	hasta el río al ${oeste, oeste}, \
+	donde puedes ver que se asienta un molino."
 );
 locCaminoDelMolino.pic = "res/path_mill_river.jpg";
 
 var locCaminoDelMuelle = ctrl.places.creaLoc(
 	"Camino del muelle",
 	[ "camino del muelle" ],
-	"El camino asciende suavemente la ladera de una ${colina, norte} cuya ${vegetación, ex vegetacion} se dispone alrededor del sendero, desde el ${embarcadero, sur}. ${Una senda, ex senda} desciende hacia el ${oeste, oeste}, supones que hacia un río, pues el suave murmullo puede oírse desde aquí."
+	"El camino asciende suavemente la ladera de una ${colina al norte, norte} \
+	cuya ${vegetación, ex vegetacion} se dispone alrededor del sendero, \
+	desde el ${embarcadero al sur, sur}. Una ${senda, ex senda} \
+	desciende hacia el ${oeste, oeste}, supones que hacia un río, \
+	pues el suave murmullo puede oírse desde aquí."
 );
 locCaminoDelMuelle.pic = "res/path_from_docks.jpg";
 
@@ -162,35 +175,49 @@ var objSendaCaminoDelMuelle = ctrl.creaObj(
 var locCaminoHaciaElBosque = ctrl.places.creaLoc(
 	"Camino hacia el bosque",
 	[ "camino hacia el bosque" ],
-	"En las lindes de un bosque. El camino se interna en la ${arboleda, ex arboleda} caminando hacia el ${este, este}, desde la plaza principal del ${pueblo, ex pueblo}, avanzando hacia el ${sur, sur}."
+	"En las lindes de un bosque. El camino se interna en la \
+	${arboleda, ex arboleda} hacia el ${este, este}, \
+	desde la plaza principal del ${pueblo, ex pueblo}, \
+	en un amplio giro desde el ${sur, sur}."
 );
 locCaminoHaciaElBosque.pic = "res/path_forest_border.jpg";
 
 var locCirco = ctrl.places.creaLoc(
 	"Circo",
 	[ "circo" ],
-	"El camino ha ascendido aquí hasta ${una depresión rodeada de picos, ex depresion} de distintas alturas. Se puede descender por dos lados, hacia un ${lago al sur, sur}, y hacia un ${cañón herboso al este, este}."
+	"El camino ha ascendido aquí hasta una \
+	${depresión rodeada de picos, ex depresion} de distintas alturas. \
+	Se puede descender por dos lados, hacia un ${lago al sur, sur}, \
+	y por un ${cañón herboso al este, este}."
 );
 locCirco.pic = "res/depression.jpg";
 
 var locClaroDelBosque = ctrl.places.creaLoc(
 	"Claro del bosque",
 	[ "claro" ],
-	"Un ${hermoso claro, ex apertura} del bosque en el fondo del ${valle, ex valle}, escondido por la densa vegetación. Siguiendo la suave pendiente, puedes salir del claro ${hacia el centro del valle, e}."
+	"Un ${hermoso claro, ex apertura} del bosque en el fondo del \
+	${valle, ex valle}, escondido por la densa vegetación. \
+	Siguiendo la suave pendiente, puedes salir del claro hacia una \
+	${zona superior del valle al este, este}."
 );
 locClaroDelBosque.pic = "res/clear_forest.jpg";
 
 var locColinaBoscosa = ctrl.places.creaLoc(
 	"Colina boscosa",
 	[ "colina" ],
-	"El bosque asciende por una suave colina, desde su ${interior, oeste}, hasta la ${cumbre de la colina misma, este}."
+	"El bosque asciende perezoso por una suave colina, desde su \
+	${interior al oeste, oeste}, hasta la cumbre de la \
+	${colina misma al este, este}."
 );
 locColinaBoscosa.pic = "res/hill_forest.jpg";
 
 var locColinas = ctrl.places.creaLoc(
 	"Colinas",
 	[ "lomas" ],
-	"Las colinas ${escalan por sobre la zona residencial de Epicuren, sur}, ${hacia las faldas de las montañas, norte}. Desde aquí tienes una magnífica ${vista de la colonia, ex vista}."
+	"Las colinas escalan por sobre la \
+	${zona residencial de Epicuren al sur, sur}, \
+	elevándose hasta las faldas de las ${montañas al norte, norte}. \
+	Desde aquí tienes una magnífica ${vista de la colonia, ex vista}."
 );
 locColinas.pic = "res/hills_north.jpg";
 
@@ -207,7 +234,10 @@ var objVista = ctrl.creaObj(
 var locCruceDeCaminos = ctrl.places.creaLoc(
 	"Cruce de caminos",
 	[ "cruce de caminos" ],
-	"${La senda, ex senda} se divide aquí en dos, hacia el ${sur, sur} y ${desde el interior de un bosque poco denso, oeste}, ${continúa hacia la salida del bosque, este}."
+	"${La senda, ex senda} viene desde el interior de un bosque poco denso al \
+	${oeste, oeste} para dividirse aquí en dos: hacia el ${sur, sur}, \
+	con un ramal un poco más estrecho, \
+	y de cara a la ${salida del bosque al este, este}."
 );
 locCruceDeCaminos.pic = "res/path_divides.jpg";
 
@@ -223,31 +253,39 @@ locEntradaDeLaMina.pic = "res/mine_entrance.jpg";
 var locEpicuren = ctrl.places.creaLoc(
 	"Epicuren",
 	[ "epicuren" ],
-	"La plaza del pueblo de Epicuren, desde donde puedes ver \
+	"La plaza del pueblo de Epicuren. Desde aquí se ve \
 	${la iglesia, ex iglesia}. Un camino sale hacia un \
-	${bosque, ex bosque}, viajando al ${norte, norte}, otro continúa \
-	${hacia la zona residencial, oeste}."
+	${bosque, ex bosque} al ${norte, norte}, \
+	otro continúa hacia la ${zona residencial al oeste, oeste}."
 );
 locEpicuren.pic = "res/town.jpg";
 
 var locEscuela = ctrl.places.creaLoc(
 	"Finca de la Escuela",
 	[ "finca" ],
-	"El edificio sin terminar para ${una escuela, ex escuela}. De nuevo, aunque el estado es de marcado abandono, y que está sin rematar, no está muy deteriorado. El camino que ${proviene del norte, n}, termina aquí."
+	"El edificio sin terminar para una futura $escuela, ex escuela}. \
+	De nuevo compruebas que no hay un deterioro avanzado, \
+	aunque la apariencia es de marcado abandono, \
+	y la construcción nunca fue rematada. \
+	El camino que ${proviene del norte, n}, termina a los pies de la entrada."
 );
 locEscuela.pic = "res/school.jpg";
 
 var locGranja = ctrl.places.creaLoc(
 	"Granja",
 	[ "granja" ],
-	"Una ${granja, ex granero} en evidente estado de abandono, se sitúa en el centro de varios campos de cultivo, que se ${extienden hacia el oeste, oeste}."
+	"Una ${granja, ex granero} en evidente estado de abandono, \
+	se sitúa en el centro de varios campos de cultivo, \
+	que se extienden hacia el ${oeste, oeste}."
 );
 locGranja.pic = "res/barn.jpg";
 
 var locIglesia = ctrl.places.creaLoc(
 	"Iglesia",
 	[ "iglesia" ],
-	"El interior de la iglesia, sombrío y húmedo, te resulta desagradable. Puedes ver un ${altar, ex altar} a medio construir... el resto del edificio está vacío. Solo se puede ${salir, salir}."
+	"El interior de la iglesia, sombrío y húmedo, te resulta desagradable. \
+	Puedes ver un ${altar, ex altar} a medio construir... \
+	el resto del edificio está vacío. Solo se puede ${salir, salir}."
 );
 locIglesia.pic = "res/church.jpg";
 locIglesia.preExit = function() {
@@ -258,16 +296,21 @@ locIglesia.preExit = function() {
 var locInteriorDelBosque = ctrl.places.creaLoc(
 	"Interior del bosque",
 	[ "interior del bosque" ],
-	"El ${camino, ex pista} se bifurca aquí para permitir caminar hacia el ${este, este}, o en sentido contrario, ${bajando hacia un pequeño valle, oeste}. Una pequeña depresión ${encamina al paso del río, sur}. El bosque empieza a mostrar mucha ${vegetación, ex arbustos} aquí, hasta el punto de que por momentos es complicado avanzar."
+	"El ${camino, ex pista} se bifurca aquí para permitir avanzar \
+	hacia el ${este, este}, o en sentido contrario, \
+	bajando hacia un ${pequeño valle, oeste}. \
+	Una ligera depresión encamina al paso del ${río al sur, sur}. \
+	El bosque empieza a mostrar mucha ${vegetación, ex arbustos} aquí, \
+	hasta el punto de que por momentos es complicado avanzar."
 );
 locInteriorDelBosque.pic = "res/path_inside_forest.jpg";
 locInteriorDelBosque.preGo = function() {
     var toret = "";
-    
+
     if ( parser.sentence.term1 == "sur" ) {
         toret = "Has cruzado el puente con mucho cuidado.";
     }
-    
+
     goAction.exe( parser.sentence );
     return toret;
 };
@@ -275,7 +318,8 @@ locInteriorDelBosque.preGo = function() {
 var locLago = ctrl.places.creaLoc(
 	"Promontorio",
 	[],
-	"El camino se torna menos pedregoso a medida que se aleja de la orilla ${hacia las montañas, norte}. Puedes ver una ${casa, ex casa} en un pequeño promontorio sobre la ${superficie del agua, ex lago}."
+	"El camino se torna menos pedregoso a medida que se aleja de la orilla \
+	hacia las ${montañas al norte, norte}. Puedes ver una ${casa, ex casa} en un pequeño promontorio sobre la ${superficie del agua, ex lago}."
 );
 locLago.pic = "res/house_lake.jpg";
 
@@ -340,12 +384,12 @@ var objRestos = ctrl.creaObj(
 
 objRestos.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( ctrl.places.limbo.has( objCuerda ) ) {
         objCuerda.moveTo( this.owner );
         toret += " De entre todas ellas, localizas ${una cuerda, coge cuerda}.";
     }
-    
+
     return toret;
 };
 
@@ -391,7 +435,7 @@ locPasaje.pic = "res/tunnel.jpg";
 
 locPasaje.preGo = function() {
     var toret = "";
-    
+
     if ( parser.sentence.term1 == "abajo" ) {
         if ( ctrl.isPresent( objCuerda ) ) {
             ctrl.goto( locSantuario );
@@ -405,7 +449,7 @@ locPasaje.preGo = function() {
     } else {
         goAction.exe( parser.sentence );
     }
-    
+
     return toret;
 };
 
@@ -422,7 +466,7 @@ locPuente.pic = "res/bridge.jpg";
 
 locPuente.preGo = function() {
     var toret = "Imposible.";
-    
+
     if ( parser.sentence.term1 == "norte" ) {
         toret = "Es demasiado inseguro, no es posible.";
         if ( objAnclajes.secured ) {
@@ -432,7 +476,7 @@ locPuente.preGo = function() {
     } else {
         toret = goAction.exe( parser.sentence );
     }
-    
+
     return toret;
 }
 
@@ -602,7 +646,7 @@ objAgujero.status = 0;
 
 objAgujero.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( this.status == 0 ) {
         ++this.status;
         ++npcSuperviviente.status;
@@ -623,14 +667,14 @@ var objAltar = ctrl.creaObj(
 
 objAltar.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( ctrl.places.limbo.has( objNota ) ) {
         objNota.moveTo( ctrl.places.getCurrentLoc() );
         toret += " Curioseas y soplas para levantar una densa nuble de polvo, \
                    dejando al descubierto una ${nota, coge nota} que no habías \
                    apreciado antes.";
     }
-    
+
     return toret;
 };
 
@@ -644,7 +688,7 @@ var objAnclajes = ctrl.creaObj(
 objAnclajes.secured = false;
 objAnclajes.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( !this.secured ) {
         if ( ctrl.personas.getPlayer().has( objEstaca ) ) {
             toret += "<br/>Podrías ${asegurar el cordaje con la estaca, deja estaca} que llevas...";
@@ -652,7 +696,7 @@ objAnclajes.preExamine = function() {
     } else {
         toret = "Los anclajes son ahora firmes y seguros.";
     }
-    
+
     return toret;
 }
 
@@ -723,13 +767,13 @@ var objBote = ctrl.creaObj(
 
 objBote.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( this.owner == locLago ) {
         toret += " Podrías ${cruzar el lago, entra en bote}, hacia la cueva.";
     } else {
         toret += " Podrías ${cruzar el lago, entra en bote}, hacia la casa.";
     }
-    
+
     return toret;
 };
 
@@ -779,24 +823,24 @@ var objCasa = ctrl.creaObj(
 
 objCasa.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( objEntrada.freed ) {
         toret += " También puedes ${entrar, entra en casa} en el edificio.";
     }
-    
+
     return toret;
 };
 
 objCasa.preEnter = function() {
     var toret = "";
-    
+
     if ( objEntrada.freed ) {
         ctrl.goto( locHabitacionCasaLago );
         toret = "Has entrado apartando telarañas y polvo...";
     } else {
         toret = "La entrada está bloqueada; no es posible entrar.";
     }
-    
+
     return toret;
 }
 
@@ -828,7 +872,7 @@ objEntrada.preExamine = function() {
 
 objEntrada.preAttack = function() {
     var toret = "¿Para qué? El paso ya está libre.";
-    
+
     if ( !this.freed ) {
         if ( ctrl.personas.getPlayer().has( objPalanca ) ) {
             this.freed = true;
@@ -837,7 +881,7 @@ objEntrada.preAttack = function() {
             toret = "No puedes hacer gran cosa con las manos desnudas.";
         }
     }
-     
+
     return toret;
 };
 
@@ -891,17 +935,17 @@ var objEstaca = ctrl.creaObj(
 
 objEstaca.preDrop = function() {
     var toret = "";
-    
+
     if ( ctrl.places.getCurrentLoc() ) {
         objEstaca.moveTo( ctrl.places.limbo );
         objAnclajes.secured = true;
         toret = "Anudas el cordaje en la estaca, y la clavas fuertemente. \
                  Ahora sí que se puede cruzar, ha quedado firme.";
-        
+
     } else {
         toret = dropAction.exe( parser.sentence );
     }
-    
+
     return toret;
 };
 
@@ -1002,12 +1046,12 @@ var objMolino = ctrl.creaObj(
 
 objMolino.preExamine = function() {
     var toret = objMolino.desc;
-    
+
     if ( objPalanca.owner == ctrl.places.limbo ) {
         objPalanca.moveTo( this.owner );
         toret += " Eso sí, en un lateral puedes ver una ${palanca, coge palanca}.";
     }
-    
+
     return toret;
 };
 
@@ -1044,6 +1088,7 @@ var objNota = ctrl.creaObj(
 
 objNota.preTake = function() {
     this.moveTo( ctrl.personas.getPlayer() );
+    ctrl.achievements.achieved( "flee_note" );
     return "Cogida.<br/>" + this.desc;
 };
 
@@ -1206,7 +1251,8 @@ var objVegetacion = ctrl.creaObj(
 var objVereda = ctrl.creaObj(
 	"vereda",
 	[ "vereda" ],
-	"Serpentea por entre colinas y pasos rocosos, conformándose como una pequeña tira sin vegetación.",
+	"Serpentea por entre colinas y pasos rocosos, \
+	conformándose como una pequeña tira sin vegetación.",
 	locCaminoDelLago,
 	Ent.Scenery
 );
@@ -1214,7 +1260,8 @@ var objVereda = ctrl.creaObj(
 var objZanjas = ctrl.creaObj(
 	"zanjas",
 	[ "zanjas" ],
-	"Las zanjas han empezado a suavizar sus ${bordes, ex bordes}: en muy poco tiempo, será imposible distinguirlas del resto del terreno.",
+	"Las zanjas han empezado a suavizar sus ${bordes, ex bordes}: \
+	en muy poco tiempo, será imposible distinguirlas del resto del terreno.",
 	locCaminoDeLosCultivos,
 	Ent.Scenery
 );
@@ -1227,6 +1274,11 @@ var objZarzas = ctrl.creaObj(
 	locPuente,
 	Ent.Scenery
 );
+
+// Achievements ================================================================
+ctrl.achievements.add( "flee_note",
+                       "Explorador (encontraste la nota de huida)." );
+
 
 // NPC =========================================================================
 var npcSuperviviente = ctrl.personas.creaPersona(
@@ -1254,11 +1306,12 @@ var htmlRestartEnding = "<p align='right'>\
                          Ver curiosidades</a>.</i></p>\
                          <p id='pAmenity' align='right' style='display: none'>"
                          + amusing()
-                         + "</p>";
+                         + "</p><p>Logros:<br/>"
+                         + ctrl.achievements.completAsText() + "</p>"
 
 npcSuperviviente.final = function() {
     var player = ctrl.personas.getPlayer();
-    
+
     ctrl.print( "Ambos admiraron con detenimiento los los grabados \
                  e inscripciones." );
     this.say( "Esto ${esclarece el misterio, ex ending}, Don Juan." );
@@ -1276,16 +1329,15 @@ var ending = ctrl.creaObj(
 ending.preExamine = function() {
     var dvCmds = ctrl.getHtmlPart( "dvCmds" );
     dvCmds.style.display = "none";
-    ctrl.endGame( "<p>\
-                   Los nómadas defendían su santuario, su lugar de culto. \
+    ctrl.endGame( "<p>Los nómadas defendían su santuario, su lugar de culto. \
                    Parece claro que el que abrieran la mina y encontraran \
                    su templo fue demasiado para ellos. Pero... ¿por qué \
                    los ataques a otros asentamientos?¿Cuál sería ahí la \
                    razón? Quizás la exploración de este lugar, \
                    y la traducción de las inscripciones permita obtener \
-                   una respuesta.\
-                   </p>"
-                  + htmlRestartEnding,
+                   una respuesta.</p>"
+                  + htmlRestartEnding
+                  + "<p>" + ctrl.achievements.completAsText() + "</p>",
                   "res/santuary.jpg" );
     return "";
 };
@@ -1296,7 +1348,7 @@ npcSuperviviente.preTalk = function() {
     var loc = ctrl.places.getCurrentLoc();
 
     ctrl.clearAnswers();
-    
+
     if ( loc == locSantuario ) {
         this.status = 99;
         toret = this.final();
@@ -1311,11 +1363,11 @@ npcSuperviviente.preTalk = function() {
     if ( loc == locPasaje ) {
         this.status = 99;
     }
-    
+
     if ( this.status == 0 ) {
         toret = "";
         ++this.status;
-        
+
         player.say( "Buenos días, buen hombre, soy Juan Vélez, \
                      enviado por el Virrey de Nueva España, \
                      para socorrerles..." );
@@ -1349,13 +1401,13 @@ npcSuperviviente.preTalk = function() {
     if ( this.status == 1 ) {
         toret = "";
         ++this.status;
-        
+
         this.say( "Será mejor que os lo enseñe..." );
         player.say( "De acuerdo..." );
         ctrl.print( "Don Diego te ha guiado colina abajo; seguisteis avanzando \
                      hacia el oeste, hasta un claro del bosque, muy en \
                      el interior del valle." );
-        
+
         this.moveTo( locClaroDelBosque );
         ctrl.goto( locClaroDelBosque );
     }
@@ -1363,7 +1415,7 @@ npcSuperviviente.preTalk = function() {
     if ( this.status == 2 ) {
         toret = "";
         ++this.status;
-        
+
         player.say( "¿Este es el monstruo que atacó?" );
         this.say( "Sí." );
         player.say( "No es un monstruo. No son monstruos." );
@@ -1398,7 +1450,7 @@ npcSuperviviente.preTalk = function() {
                      Ni siquiera son habitantes autóctonos de las tierras \
                      de las colonias, siempre aparecen después... \
                      No sabemos gran cosa. Les llamamos los nómadas." );
-        
+
         npcNomada.id = "nómada";
         ++npcNomada.status;
     }
@@ -1487,7 +1539,7 @@ npcNomada.status = 0;
 npcNomada.preTalk = function() {
     var toret = "Un nómada muerto.";
     ctrl.clearAnswers();
-    
+
     if ( this.status == 0 ) {
         toret = "";
         ctrl.print( "Está muerto, y desde hace tiempo. Lo volteas (para horror \
@@ -1500,7 +1552,7 @@ npcNomada.preTalk = function() {
         toret = "";
         ctrl.print( "El nómada está muerto." );
     }
-    
+
     return toret;
 }
 
@@ -1533,14 +1585,14 @@ var objBrujula = ctrl.creaObj(
 objBrujula.firstTime = true;
 objBrujula.preExamine = function() {
     var toret = objBrujula.desc + "<br/>";
-    
+
     if ( this.firstTime ) {
         this.firstTime = false;
         toret += " Es equipamiento básico para cualquier explorador.<br/>";
     }
-    
+
     toret += actions.execute( "exits" );
-    
+
     return toret;
 }
 
@@ -1555,7 +1607,6 @@ var objOrdenes = ctrl.creaObj(
 	pc,
 	Ent.Portable
 );
-
 
 ctrl.personas.changePlayer( pc );
 ctrl.places.ponInicio( locMuelle );

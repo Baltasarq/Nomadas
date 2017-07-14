@@ -1,5 +1,6 @@
 /* Default colors and sizes */
 body {
+    cursor: crosshair;
     background-color: black;
     color: white;
     font-familiy: serif;
@@ -10,27 +11,61 @@ body {
     text-justify: inter-word
 }
 
-.firstP {
-    text-indent: 0mm
+.clsAchieved {
+    font-style: italic
 }
 
-/* Hyperlinks */
-a {
+.firstP {
+    text-indent: 2mm
+}
+
+/* Hyperlinks: default */
+a:link, a:visited {
     font-weight: bold;
     color: cyan;
-    text-decoration:none;
-    cursor: crosshair;
+    text-decoration: none;
 }
 
 a:hover {
     color:darkcyan;
-    text-decoration:none;
-    text-shadow: 1px 1px black;
+    text-decoration: none;
+    text-shadow: 0px 1px gray;
 }
 
-a:visited {
-    color: lightcyan;
-    text-decoration:none
+/* Hyperlinks: movement */
+a.clsLinkMov:link, a.clsLinkMov:visited {
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+
+a.clsLinkMov:hover {
+    color: limegreen;
+    text-decoration: none;
+}
+
+/* Hyperlinks: object actions */
+a.clsLinkObj:link, a.clsLinkObj:visited {
+    font-weight: bold;
+    color: royalblue;
+    text-decoration: none;
+}
+
+a.clsLinkObj:hover {
+    color: skyblue;
+    text-decoration: none;
+}
+
+/* Hyperlinks: pnj actions */
+a.clsLinkPnj:link, a.clsLinkPnj:visited {
+    font-weight: bold;
+    color: darkred;
+    text-decoration: none
+}
+
+a.clsLinkPnj:hover {
+    color: mediumvioletred;
+    text-decoration: none;
 }
 
 /* Intro div, before game */
@@ -74,11 +109,14 @@ a:visited {
         max-width: 300px;
         max-height: 300px
     }
+    #dvDesc {
+        font-size: 20pt
+    }
 }
 
 /* Game div */
 #dvFi {
-    width:80%;
+    width: 80%;
     margin-left: 10%;
     margin-right: 10%;
     display: none
@@ -117,27 +155,26 @@ a:visited {
 /* Description text for current room */
 #dvDesc  {
     color: yellow;
-    width:100%;
-    font-familiy: Verdana,Arial,Helvetica;
-    font-size:22px;
+    width: 100%;
+    font-familiy: sans-serif;
+    font-size: 18pt;
     text-align: justify
 }
 
 /* Game's answer text */
 #dvAnswer {
     width:100%;
-    font-familiy: Verdana,Arial,Helvetica;
-    font-size:20px
+    font-familiy: sans-serif;
 }
 
 /* Input section, prompt, icons... */
 #dvInput {
-    color:white;
-    background-color:black;
-    width:100%;
-    height:10%;
-    font-familiy: Verdana,Arial,Helvetica;
-    font-size:20px;
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 10%;
+    font-familiy: sans-serif;
+    font-size:16pt;
     display: none
 }
 
@@ -155,11 +192,11 @@ a:visited {
 
 /* Error section, this is normally not seen by players */
 #dvError {
-    color:white;
-    background-color:red;
-    width:100%;
-    height:10%;
-    font-size:24pt;
+    color: white;
+    background-color: red;
+    width: 100%;
+    height: 10%;
+    font-size: 24pt;
 }
 
 #dvObjects {
