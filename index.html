@@ -59,7 +59,7 @@
                     </a>
                     </td>
                     <td style="width: 20%; text-align: center">
-                    <a href="#" onClick="javascript: ctrl.inject('load', true, true)">
+                    <a href="#" onClick="javascript: if ( window.confirm( '¿Seguro? Perderás todo lo que no esté guardado...' ) ) { ctrl.inject('load', true, true); }">
                     <img src="res/load.png" alt="Recupera" title="Recupera"
                          style="max-width: 32px"/>
                     </a>
