@@ -2234,5 +2234,4 @@ var objOrdenes = ctrl.creaObj(
 );
 
 ctrl.personas.changePlayer( pc );
-ctrl.places.ponInicio( locSacristiaSantuario );
-console.log( "Completed achs: " + ctrl.achievements.complet().complet )
+ctrl.places.ponInicio( locMuelle );
