@@ -52,7 +52,7 @@ locAsentamiento.postExamine = function() {
     if ( this.getTimesExamined() == 1 ) {
         ctrl.personas.getPlayer().say( "¡Por fin! Gentes de la colonia." );
     }
-    
+
     if ( npcSuperviviente.status == 0 ) {
         ctrl.print( "<br/>Un hombre (presumes que un colono), se encuentra \
                   sentado fuera de una de las \
@@ -117,7 +117,7 @@ var objRocas = ctrl.creaObj(
 
 objRocas.preExamine = function() {
     var toret = objRocas.desc;
-    
+
     if ( ctrl.places.limbo.has( objPiedraAfilada ) ) {
         objPiedraAfilada.moveTo( this.owner );
         ctrl.places.updateDesc();
@@ -125,7 +125,7 @@ objRocas.preExamine = function() {
                   se disponen de forma escalonada. Una de ellas, está tan \
                   afilada que llama tu atención.";
     }
-    
+
     return toret;
 };
 
@@ -153,7 +153,7 @@ locCaminoDeLaSierra.preGo = function() {
             } else {
                 toret = "Continuáis caminando, sombríos.";
             }
-            
+
             goAction.exe( parser.sentence );
         } else {
             toret = "No le ves sentido a continuar un fatigoso viaje, \
@@ -250,7 +250,7 @@ locClaroDelBosque.preGo = function() {
     } else {
         toret = goAction.exe( parser.sentence );
     }
-    
+
     return toret;
 };
 
@@ -344,7 +344,7 @@ objPozo.extended = true;
 
 objPozo.preExamine = function() {
     var toret = objPozo.desc;
-    
+
     if ( this.extended ) {
         toret += " Del soporte cuelga una polea \
                    que podrías ${usar, tira de pozo}. \
@@ -352,13 +352,13 @@ objPozo.preExamine = function() {
     } else {
         toret += " El cubo está recogido, colgando muy cercano a la polea.";
     }
-    
+
     return toret;
 };
 
 objPozo.prePull = function() {
     var toret = "El cubo ya está recogido.";
-    
+
     if ( this.extended ) {
         this.extended = false;
         ctrl.print( "Haciendo girar la polea chirriante, \
@@ -372,7 +372,7 @@ objPozo.prePull = function() {
                  como explorando los restos de una civilización ajena. \
                  De nuevo preguntas sin respuesta alguna hostigan tu mente.";
     }
-    
+
     return toret;
 };
 
@@ -425,7 +425,7 @@ objLibro.read = false;
 
 objLibro.preExamine = function() {
     var toret = objLibro.desc;
-    
+
     if ( !this.read ) {
         ctrl.personas.getPlayer().say( "Es emocionante encontrar \
                                         uno de los más recientes maravillas \
@@ -442,7 +442,7 @@ objLibro.preExamine = function() {
                  Te deleitas, sin embargo, curioseando por entre \
                  las primeras páginas.";
     }
-    
+
     return toret;
 };
 
@@ -502,7 +502,7 @@ locInteriorDelBosque.preGo = function() {
 
     if ( parser.sentence.term1 == "sur" ) {
         toret = "Has cruzado el puente con mucho cuidado.";
-        
+
         if ( npcSuperviviente.owner == this ) {
             toret += " Don Diego parece inquieto.";
             player.say(
@@ -549,7 +549,7 @@ locLago.postExamine = function() {
              Parece un conjunto interesante..."
         );
     }
-    
+
     return;
 };
 
@@ -752,26 +752,26 @@ var objSaquetas = ctrl.creaObj(
 objSaquetas.vecesApartadas = 0;
 objSaquetas.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( objCajas.owner == ctrl.places.limbo ) {
         toret += " Al fondo, tras las saquetas, parece haber algo más... \
                    podrías ${apartarlas, empuja saquetas} para ver lo que es.";
     }
-    
+
     return toret;
 };
 
 objSaquetas.prePush = function() {
     var toret = "Vas apartando saquetas, pero hay mucho trabajo \
                  por delante, todavía.";
-    
+
     ++this.vecesApartadas;
     if ( this.vecesApartadas > 2 ) {
         objCajas.moveTo( this.owner );
         toret = "Solo un cuarto del almacén está lleno de ${cajas, ex cajas}.";
         locAlmacen.desc += "<br/>Has ido apartando las saquetas hasta dejar \
                            al descubierto unas ${cajas, ex cajas}.";
-        ctrl.personas.getPlayer().say( 
+        ctrl.personas.getPlayer().say(
                         "Estoy como avanzando por capas. En la primera, la más \
                          reciente, almacenaban el grano descuidadamente, en \
                          saquetas, \
@@ -783,7 +783,7 @@ objSaquetas.prePush = function() {
                          las inclemencias del tiempo." );
         ctrl.places.updateDesc();
     }
-    
+
     return toret;
 };
 
@@ -798,7 +798,7 @@ var objCajas = ctrl.creaObj(
 objCajas.primeraVezExaminado = true;
 objCajas.preExamine = function() {
     var toret = this.desc;
-    
+
     if ( this.primeraVezExaminado ) {
         this.primeraVezExaminado = false;
         objPalanca.moveTo( this.owner );
@@ -807,7 +807,7 @@ objCajas.preExamine = function() {
                   ${palanca, coge palanca}.";
         ctrl.achievements.achieved( "perseverant" );
     }
-    
+
     return toret;
 };
 
@@ -902,7 +902,7 @@ var locResidencialDeEpicuren = ctrl.places.creaLoc(
 locResidencialDeEpicuren.pic = "res/residential.jpg";
 locResidencialDeEpicuren.postExamine = function() {
     if ( this.getTimesExamined() == 1 ) {
-        ctrl.personas.getPlayer().say( 
+        ctrl.personas.getPlayer().say(
                             "Es desolador, inmensamente vacío... \
                              Aquí no hay nadie." );
     }
@@ -1166,7 +1166,7 @@ objAnclajes.preExamine = function() {
                         atar todo el cordaje. Quien hiciera esto, \
                         no quiere que nadie cruce.";
             }
-            
+
             player.say( "Piensa... \
                          es necesario clavar algo para atar el cordaje..." );
         }
@@ -1553,13 +1553,13 @@ var objPalanca = ctrl.creaObj(
 );
 objPalanca.preDrop = function() {
     var toret = "No estoy seguro sin ella.";
-    
+
     if ( ctrl.places.getCurrentLoc() == locPuente ) {
         ctrl.personas.getPlayer().say( "Mmm... no tiene una punta afilada \
                                         que se pueda clavar." );
         toret = "No funcionará.";
     }
-    
+
     return toret;
 };
 
@@ -2069,7 +2069,7 @@ npcGuardian.preTalk = function() {
     var player = ctrl.personas.getPlayer();
 
     ctrl.clearAnswers();
-    
+
     if ( this.status == 0 ) {
         this.say( "Saludos, extranjeros." );
         player.say( "¿Conoces nuestro idioma?" );
@@ -2120,7 +2120,7 @@ npcGuardian.preTalk = function() {
         this.say( "Entonces habrá guerra, y os destruiremos." );
         ctrl.print( "De nuevo una respuesta ofensiva, \
                      expresada a la manera de la pura lógica." );
-        
+
         ++this.status;
     }
     else
@@ -2151,10 +2151,10 @@ npcGuardian.preTalk = function() {
     else
     if ( this.status == 3 ) {
         ctrl.print( "Intentas volver a hablar con el guardián, \
-                     pero hace un gesto conminando a guardar silencio." );             
+                     pero hace un gesto conminando a guardar silencio." );
         actions.execute( "examine", "ending" );
     }
-    
+
     return;
 };
 
@@ -2191,7 +2191,7 @@ pc.postAction = function() {
     {
         var dvDesc = document.getElementById( "dvDesc" );
         var pMsg = document.createElement( "p" );
-        
+
         npcSuperviviente.moveTo( ctrl.places.getCurrentLoc() );
         pMsg.innerHTML = ctrl.cnvtTextLinksToHtml(
                 "D. ${Diego, habla con Diego} va contigo." );
