@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifindex version="1.0" xmlns="http://babel.ifarchive.org/protocol/iFiction/">
+    <story>
+        <identification>
+            <ifid>EF8DF70C-874C-4C66-8246-18CA0887E49B</ifid>
+            <format>html</format>
+        </identification>
+        <bibliographic>
+            <title>Nómadas</title>
+            <author>baltasarq</author>
+            <language>ES</language>
+            <headline>Nómadas que buscan los ángulos de la tranquilidad, la encontrarás, fuera de la ciudad, al final de tu camino.</headline>
+            <genre>mistery</genre>
+            <forgiveness>polite</forgiveness>
+            <description>Juan Vélez llega a la colonia de Epicuren, por encargo del Virrey de Nueva España. Un emisario había llegado hacía pocas semanas a la Corte pidiendo ayuda para el asentamiento. Desgraciadamente, su viaje había sido terrible y parecía no estar en sus cabales: hablaba de monstruos terribles.</description>
+        </bibliographic>
+        <contacts>
+            <authoremail>baltasarq@gmail.com</authoremail>
+            <url>http://caad.es/baltasarq/</url>
+        </contacts>
+        <release>
+            <version>2</version>
+            <releasedate>2017/09/22</releasedate>
+        </release>
+        <colophon>
+            <generator>Babble</generator>
+            <originated>2017/09/22</originated>
+        </colophon>
+    </story>
+</ifindex>
