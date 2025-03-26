@@ -1,0 +1,213 @@
+/* Default colors and sizes */
+body {
+    cursor: crosshair;
+    background-color: black;
+    color: white;
+    font-family: serif;
+    font-size: 16pt;
+    margin: 5%;
+    text-indent: 5mm;
+    text-align: justify;
+    text-justify: inter-word
+}
+
+.clsAchieved {
+    font-style: italic
+}
+
+.firstP {
+    text-indent: 2mm
+}
+
+/* Hyperlinks: default */
+a:link, a:visited {
+    font-weight: bold;
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover {
+    color:darkcyan;
+    text-decoration: none;
+    text-shadow: 0 1px gray;
+}
+
+/* Hyperlinks: movement */
+a.clsLinkMov:link, a.clsLinkMov:visited {
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+
+a.clsLinkMov:hover {
+    color: limegreen;
+    text-decoration: none;
+}
+
+/* Hyperlinks: object actions */
+a.clsLinkObj:link, a.clsLinkObj:visited {
+    font-weight: bold;
+    color: royalblue;
+    text-decoration: none;
+}
+
+a.clsLinkObj:hover {
+    color: skyblue;
+    text-decoration: none;
+}
+
+/* Hyperlinks: pnj actions */
+a.clsLinkPnj:link, a.clsLinkPnj:visited {
+    font-weight: bold;
+    color: purple;
+    text-decoration: none
+}
+
+a.clsLinkPnj:hover {
+    color: magenta;
+    text-decoration: none;
+}
+
+/* Intro div, before game */
+#dvIntro {
+    font-size: 12pt;
+    text-align: center;
+    display: block;
+}
+
+#dvIntro img {
+    border-radius: 25px;
+}
+
+#hrIntroSeparator {
+    color: blue;
+    background-color: white;
+    height: 3px;
+    border: 0
+}
+
+#btBoot {
+    color: red;
+    font-weight: bold
+}
+
+/* Game title */
+#dvTitle {
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 5%;
+    font-size: 18pt;
+    color: red
+}
+
+@media screen and (max-width: 1024px) {
+    #dvTop {
+        display: none !important;
+    }
+    #dvPic img, #dvIntro img {
+        width: 100%;
+        max-width: 300px;
+        max-height: 300px
+    }
+    #dvDesc {
+        font-size: 20pt
+    }
+}
+
+/* Game div */
+#dvFi {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: none
+}
+
+#hrFiSeparator {
+    color: black;
+    background-color: white;
+    height: 3px;
+    border: 0
+}
+
+/* Name of the room */
+#dvId {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 10%;
+    color: red;
+    font-style: italic;
+    font-weight: bold
+}
+
+/* Image */
+#dvPic {
+    width: 100%;
+    height: 40%;
+    text-align: center
+}
+
+#dvPic img {
+    border-radius: 25px;
+    max-width: 100%;
+    width: auto
+}
+
+/* Description text for current room */
+#dvDesc  {
+    color: yellow;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 18pt;
+    text-align: justify
+}
+
+/* Game's answer text */
+#dvAnswer {
+    width:100%;
+    font-family: sans-serif;
+}
+
+/* Input section, prompt, icons... */
+#dvInput {
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 10%;
+    font-family: sans-serif;
+    font-size:16pt;
+    display: none
+}
+
+#edInput{
+    width: 90%;
+    color: khaki;
+    background-color: black;
+    border: none;
+    border: 1px dotted gray;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 14pt;
+    padding: 6px
+}
+
+/* Error section, this is normally not seen by players */
+#dvError {
+    color: white;
+    background-color: red;
+    width: 100%;
+    height: 10%;
+    font-size: 24pt;
+}
+
+#dvObjects {
+    font-family: monospace;
+    font-size: 18pt;
+    text-align: center;
+    color: white;
+    display: none
+}
+
+#dvActions {
+    cursor: crosshair;
+    display: none
+}
